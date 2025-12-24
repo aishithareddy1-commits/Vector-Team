@@ -1,0 +1,159 @@
+
+        /* --- 1. MODERN COLOR PALETTE --- */
+        :root {
+            --primary: #4285F4;
+            --primary-light: #e8f0fe;
+            --green: #34A853;
+            --yellow: #FBBC05;
+            --red: #EA4335;
+            --dark: #202124;
+            --bg: #F8F9FA; 
+            --text: #3c4043;
+            --subtext: #5f6368;
+            --border: #dadce0;
+            
+            /* Level Badges */
+            --level-beg: #E6F4EA; --text-beg: #137333;
+            --level-int: #FEF7E0; --text-int: #B06000;
+            --level-pro: #FCE8E6; --text-pro: #C5221F;
+        }
+
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: var(--bg); 
+            color: var(--text); 
+            margin: 0; 
+            padding-bottom: 80px; 
+            line-height: 1.5;
+        }
+
+        /* --- 2. HEADER (Added Gradient) --- */
+        header { 
+            background: linear-gradient(135deg, #202124 0%, #2d3436 100%); 
+            color: white; 
+            padding: 4rem 1rem; 
+            text-align: center; 
+            border-bottom: 5px solid var(--primary);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        h1 { font-family: 'Space Grotesk', sans-serif; font-size: 3rem; margin: 0; letter-spacing: -1px; }
+        .subtitle { color: #bdc1c6; margin-top: 10px; font-size: 1.1rem; letter-spacing: 1px; font-weight: 500; }
+
+        /* --- 3. STICKY NAVIGATION (Glass Effect) --- */
+        .nav-container { 
+            display: flex; 
+            justify-content: center; 
+            gap: 12px; 
+            flex-wrap: wrap; 
+            padding: 15px; 
+            position: sticky; 
+            top: 10px; 
+            z-index: 100;
+        }
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.9); 
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.5);
+            padding: 12px 28px; 
+            border-radius: 50px;
+            font-weight: 700; 
+            color: var(--subtext); 
+            cursor: pointer; 
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08); 
+            font-size: 0.9rem;
+        }
+        .nav-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); color: var(--primary); }
+        .nav-btn.active { background: var(--primary); color: white; transform: scale(1.05); box-shadow: 0 6px 15px rgba(66, 133, 244, 0.4); border: none; }
+
+        /* --- 4. SECTIONS & ANIMATION --- */
+        .section { display: none; max-width: 900px; margin: 20px auto; padding: 0 20px; animation: fadeInUp 0.5s ease-out; }
+        .section.active { display: block; }
+        .section-title { 
+            font-family: 'Space Grotesk'; 
+            font-size: 1.8rem; 
+            margin-bottom: 25px; 
+            color: var(--dark); 
+            border-left: 5px solid var(--primary); 
+            padding-left: 15px;
+        }
+
+        /* --- 5. CARD DESIGN (More Polish) --- */
+        .wide-card, .card {
+            background: white; 
+            border-radius: 20px; 
+            padding: 30px; 
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03); 
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .wide-card:hover, .card:hover { transform: translateY(-4px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
+        
+        .wide-card h3, .card h3 { margin-top: 0; display: flex; align-items: center; gap: 12px; font-size: 1.4rem; margin-bottom: 15px; color: var(--dark); }
+        .icon-box { background: var(--primary-light); color: var(--primary); width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+
+        /* --- 6. LIST ITEMS & ROWS --- */
+        .level-row, .tech-item {
+            display: flex; align-items: center; gap: 15px; margin-bottom: 10px; padding: 12px; 
+            border-radius: 12px; border: 1px solid transparent; transition: 0.2s;
+        }
+        .level-row:hover, .tech-item:hover { background: #f8fbff; border-color: var(--primary-light); }
+        .level-row:last-child, .tech-item:last-child { margin-bottom: 0; }
+        
+        .tech-info { flex: 1; }
+        .tech-info div { font-weight: 700; color: var(--dark); font-size: 1rem; }
+        .tech-info span { font-size: 0.85rem; color: var(--subtext); display: block; margin-top: 4px; line-height: 1.4; }
+
+        /* --- 7. BADGES & BUTTONS --- */
+        .level-badge {
+            font-size: 0.65rem; font-weight: 800; text-transform: uppercase; padding: 6px 10px; border-radius: 6px; width: 70px; text-align: center; flex-shrink: 0; letter-spacing: 0.5px;
+        }
+        .badge-beg { background: var(--level-beg); color: var(--text-beg); }
+        .badge-int { background: var(--level-int); color: var(--text-int); }
+        .badge-pro { background: var(--level-pro); color: var(--text-pro); }
+
+        .link-group { display: flex; gap: 8px; flex-wrap: wrap; }
+        
+        .course-btn {
+            text-decoration: none; padding: 8px 14px; border-radius: 8px; font-size: 0.8rem; font-weight: 600;
+            display: inline-flex; align-items: center; transition: all 0.2s; border: 1px solid var(--border); background: white; color: var(--text);
+        }
+        .course-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+        .course-btn span { font-size: 0.75rem; color: #999; margin-left: 6px; font-weight: 400; }
+        
+        .btn-eng { color: var(--primary); background: #f1f7ff; border-color: #d2e3fc; }
+        .btn-eng:hover { background: var(--primary); color: white; border-color: var(--primary); }
+        
+        .btn-tel { color: #c5221f; background: #fff5f5; border-color: #fad2cf; }
+        .btn-tel:hover { background: #c5221f; color: white; border-color: #c5221f; }
+        
+        .btn-yt-guide { color: #d93025; border-color: #ffcccc; background: white; }
+        .btn-yt-guide:hover { background: #d93025; color: white; }
+
+        /* --- 8. TOGGLES & EXTRAS --- */
+        .toggle-container { background: #edf2f7; padding: 6px; border-radius: 12px; display: flex; margin: 20px 0; }
+        .toggle-btn { flex: 1; border: none; background: transparent; padding: 12px; border-radius: 8px; font-weight: 700; color: var(--subtext); cursor: pointer; transition: 0.3s; }
+        .toggle-btn.active { background: white; color: var(--primary); box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        
+        .skill-list { display: none; animation: fadeIn 0.4s; }
+        .skill-list.show { display: block; }
+
+        .btn-row { display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
+        .action-btn { 
+            flex: 1; padding: 15px; text-align: center; text-decoration: none; border-radius: 12px; 
+            font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; justify-content: center; gap: 8px; min-width: 140px;
+            transition: transform 0.2s;
+        }
+        .action-btn:hover { transform: scale(1.02); filter: brightness(0.95); }
+        .bg-yellow { background: #FEF7E0; color: #B06000; }
+        .bg-dark { background: var(--dark); color: white; }
+        .bg-blue { background: var(--primary-light); color: var(--primary); }
+        
+        /* Grid for cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+
+        /* Animations */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    
